@@ -2,7 +2,7 @@ const express = require('express');
 const db = require('./db');
 
 const app = express();
-const port = 3000;
+const port = process.env.port || 3000;
 
 // Nonaktifkan permintaan favicon
 app.get('/favicon.ico', (req, res) => res.status(204));
@@ -73,9 +73,9 @@ app.get('/', (req, res) => {
   res.sendFile('index.html', { root: 'public' });
 });
 
-app.listen(port, () => {
-  console.log(`Server berjalan di http://localhost:${port}`);
-});
+//app.listen(port, () => {console.log(`Server berjalan di http://localhost:${port}`);});
+app.listen(port, "0.0.0.0", function () {});
+
 
 // Fungsi untuk mengubah format tanggal ke "YYYY-MM-DD"
 function formatDate(date) {
