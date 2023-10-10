@@ -1,6 +1,6 @@
 const mysql = require('mysql2');
 const url = require('url');
-const databaseUrl = new URL('mysql://root:yF7JdTWzEWBTfsevgCf1@containers-us-west-200.railway.app:6022/railway');
+const databaseUrl = new URL('mysql://root:EcxAFLawCOUPHGQ1uvCe@containers-us-west-182.railway.app:6388/railway');
 
 const db = mysql.createConnection({
   host: databaseUrl.hostname,
